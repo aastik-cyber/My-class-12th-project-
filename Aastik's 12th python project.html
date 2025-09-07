@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Boy Cars - Premier Automotive Excellence</title>
+    <meta name="description" content="Your premier destination for luxury and high-performance vehicles. Discover exceptional cars crafted for discerning drivers at Big Boy Cars." />
+    <meta name="author" content="Big Boy Cars" />
+    
+    <meta property="og:title" content="Big Boy Cars - Premier Automotive Excellence" />
+    <meta property="og:description" content="Your premier destination for luxury and high-performance vehicles. Discover exceptional cars crafted for discerning drivers." />
+    <meta property="og:type" content="website" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bigboycars" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Big Boy Cars Design System - Automotive Excellence */
+        :root {
+            /* Automotive Color Palette */
+            --background: 220 27% 8%;
+            --foreground: 210 20% 95%;
+            --card: 220 23% 11%;
+            --card-foreground: 210 20% 95%;
+            --popover: 220 23% 11%;
+            --popover-foreground: 210 20% 95%;
+            --primary: 220 91% 58%;
+            --primary-foreground: 220 27% 8%;
+            --primary-glow: 220 91% 68%;
+            --secondary: 217 19% 27%;
+            --secondary-foreground: 210 20% 95%;
+            --muted: 217 12% 20%;
+            --muted-foreground: 215 16% 65%;
+            --accent: 25 95% 58%;
+            --accent-foreground: 220 27% 8%;
+            --accent-glow: 25 95% 68%;
+            --destructive: 0 84% 60%;
+            --destructive-foreground: 210 40% 98%;
+            --success: 142 71% 45%;
+            --success-foreground: 210 40% 98%;
+            --warning: 48 96% 53%;
+            --warning-foreground: 220 27% 8%;
+            --border: 217 19% 27%;
+            --input: 217 19% 27%;
+            --ring: 220 91% 58%;
+            --radius: 0.75rem;
+            
+            /* Automotive Gradients */
+            --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+            --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+            --gradient-background: linear-gradient(135deg, hsl(var(--background)), hsl(220 27% 12%));
+            --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(217 19% 15%));
+            --gradient-hero: linear-gradient(135deg, hsl(220 27% 8%) 0%, hsl(220 91% 20%) 100%);
+            
+            /* Automotive Shadows */
+            --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+            --shadow-accent-glow: 0 0 30px hsl(var(--accent) / 0.3);
+            --shadow-card: 0 8px 32px hsl(220 27% 4% / 0.6);
+            --shadow-elevated: 0 16px 64px hsl(220 27% 4% / 0.8);
+            
+            /* Animations */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gradient-background);
+            color: hsl(var(--foreground));
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Automotive UI Components */
+        .automotive-card {
+            background: var(--gradient-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .automotive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .glow-primary {
+            box-shadow: var(--shadow-glow);
+        }
+
+        .glow-accent {
+            box-shadow: var(--shadow-accent-glow);
+        }
+
+        .btn-automotive {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            transform: scale(1);
+            background: var(--gradient-primary);
+            color: hsl(var(--primary-foreground));
+            border: 1px solid hsl(var(--primary));
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .btn-automotive:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-accent {
+            background: var(--gradient-accent);
+            color: hsl(var(--accent-foreground));
+            border: 1px solid hsl(var(--accent));
+        }
+
+        .btn-accent:hover {
+            box-shadow: var(--shadow-accent-glow);
+        }
+
+        .hero-section {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+            }
+            to {
+                box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Confetti Animation */
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall linear infinite;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 50;
+        }
+
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: hsl(var(--muted));
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus {
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            background: hsl(var(--muted));
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            outline: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .form-select:focus {
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+        }
+
+        /* Card Grid */
+        .car-card {
+            background: var(--gradient-card);
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .car-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .car-card.selected {
+            border-color: hsl(var(--primary));
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Toast Messages */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--gradient-card);
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-elevated);
+            z-index: 100;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: var(--transition-smooth);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            border-left: 4px solid hsl(var(--success));
+        }
+
+        .toast.error {
+            border-left: 4px solid hsl(var(--destructive));
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--background));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--primary));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--primary-glow));
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-accent {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="automotive-card my-8">
+                <div class="p-8">
+                    <div id="hero-section" class="hero-section p-12 rounded-xl mb-8">
+                        <div class="text-center relative z-10">
+                            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+                                <span class="gradient-text">Big Boy Cars</span>
+                            </h1>
+                            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                                Your Premier Destination for <span class="gradient-text-accent font-semibold">Automotive Excellence</span>
+                            </p>
+                            <div class="flex justify-center items-center space-x-8 float-animation">
+                                <div class="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center glow-primary">
+                                    <span class="text-2xl">🏎️</span>
+                                </div>
+                                <div class="w-16 h-16 rounded-full bg-gradient-accent flex items-center justify-center glow-accent">
+                                    <span class="text-3xl">⚡</span>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center glow-primary">
+                                    <span class="text-2xl">🔧</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="content-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script>
+        // Big Boy Cars Application - Complete Implementation
+        (() => {
+            // Initial Data
+            const initialCars = [
+                { name: 'BMW 7 Series', engine_name: 'BMW V8', cylinder_type: 'V', capacity: '4.4', torque: '500', transmission: 'automatic', power: '540', price: '86000' },
+                { name: 'Rolls Royce Phantom', engine_name: 'Rolls Royce V12', cylinder_type: 'V', capacity: '6.75', torque: '900', transmission: 'automatic', power: '563', price: '450000' },
+                { name: 'Mercedes-Benz S-Class', engine_name: 'Mercedes V8', cylinder_type: 'V', capacity: '4.0', torque: '700', transmission: 'automatic', power: '503', price: '110000' },
+                { name: 'Audi A8', engine_name: 'Audi V8', cylinder_type: 'V', capacity: '3.0', torque: '600', transmission: 'automatic', power: '333', price: '86000' },
+                { name: 'Porsche Panamera', engine_name: 'Porsche V6', cylinder_type: 'V', capacity: '2.9', torque: '450', transmission: 'automatic', power: '330', price: '89000' },
+                { name: 'Lexus LS 500', engine_name: 'Lexus V8', cylinder_type: 'V', capacity: '3.5', torque: '500', transmission: 'automatic', power: '416', price: '76000' },
+                { name: 'BMW 3 Series', engine_name: 'BMW Inline-6', cylinder_type: 'inline', capacity: '3.0', torque: '450', transmission: 'automatic', power: '382', price: '41000' },
+                { name: 'Mercedes-Benz E-Class', engine_name: 'Mercedes Inline-6', cylinder_type: 'inline', capacity: '3.0', torque: '500', transmission: 'automatic', power: '362', price: '55000' },
+                { name: 'Toyota Supra', engine_name: 'Toyota Inline-6', cylinder_type: 'inline', capacity: '3.0', torque: '500', transmission: 'automatic', power: '382', price: '51000' },
+                { name: 'Subaru WRX', engine_name: 'Subaru Boxer-4', cylinder_type: 'boxer', capacity: '2.0', torque: '350', transmission: 'manual', power: '268', price: '28000' },
+                { name: 'Porsche 911 Carrera', engine_name: 'Porsche Boxer-6', cylinder_type: 'boxer', capacity: '3.0', torque: '450', transmission: 'automatic', power: '379', price: '101000' }
+            ];
+
+            // Storage utility
+            const storage = {
+                get(key, defaultValue = []) {
+                    try {
+                        const data = localStorage.getItem(key);
+                        return data ? JSON.parse(data) : defaultValue;
+                    } catch (e) {
+                        console.error(`Error loading data from localStorage for key "${key}":`, e);
+                        return defaultValue;
+                    }
+                },
+                set(key, data) {
+                    try {
+                        localStorage.setItem(key, JSON.stringify(data));
+                    } catch (e) {
+                        console.error(`Error saving data to localStorage for key "${key}":`, e);
+                    }
+                }
+            };
+
+            // Application state
+            let currentView = 'main';
+            let availableCars = storage.get('availableCars', initialCars);
+            let purchasedCars = storage.get('purchasedCars', []);
+            let customers = storage.get('customers', []);
+            let searchPreferences = storage.get('searchPreferences', {});
+            const adminPassword = "1122";
+            let loginAttempts = 0;
+
+            // DOM elements
+            const contentContainer = document.getElementById('content-container');
+            const heroSection = document.getElementById('hero-section');
+            const toastContainer = document.getElementById('toast-container');
+
+            // Utility Functions
+            const showToast = (message, type = 'success') => {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.innerHTML = `
+                    <div class="font-semibold">${type === 'success' ? 'Success!' : 'Error!'}</div>
+                    <div class="text-sm opacity-90">${message}</div>
+                `;
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 100);
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toastContainer.removeChild(toast), 300);
+                }, 3000);
+            };
+
+            const launchConfetti = () => {
+                const confettiContainer = document.createElement('div');
+                confettiContainer.className = 'confetti-container';
+                document.body.appendChild(confettiContainer);
+
+                const colors = ['#ef4444', '#3b82f6', '#22c55e', '#eab308', '#a855f7'];
+                for (let i = 0; i < 50; i++) {
+                    const confettiPiece = document.createElement('div');
+                    confettiPiece.className = 'confetti-piece';
+                    confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confettiPiece.style.left = `${Math.random() * 100}vw`;
+                    confettiPiece.style.animationDelay = `${Math.random() * 2}s`;
+                    confettiContainer.appendChild(confettiPiece);
+                }
+
+                setTimeout(() => {
+                    document.body.removeChild(confettiContainer);
+                }, 4000);
+            };
+
+            const renderCarCard = (car, isSelectable = false, selectedCar = '') => {
+                return `
+                    <div class="car-card ${isSelectable && selectedCar === car.name ? 'selected' : ''}" 
+                         ${isSelectable ? `onclick="selectCar('${car.name}')"` : ''}>
+                        <h3 class="text-xl font-bold mb-3">${car.name}</h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-400 mb-4">
+                            <p><span class="font-semibold">Engine:</span> ${car.engine_name}</p>
+                            <p><span class="font-semibold">Cylinder:</span> ${car.cylinder_type}</p>
+                            <p><span class="font-semibold">Capacity:</span> ${car.capacity} L</p>
+                            <p><span class="font-semibold">Torque:</span> ${car.torque} Nm</p>
+                            <p><span class="font-semibold">Transmission:</span> ${car.transmission}</p>
+                            <p><span class="font-semibold">Power:</span> ${car.power} HP</p>
+                        </div>
+                        <p class="text-2xl font-bold gradient-text-accent">$${parseInt(car.price).toLocaleString()}</p>
+                        ${isSelectable && selectedCar === car.name ? '<div class="mt-2 text-success font-semibold">✓ Selected</div>' : ''}
+                    </div>
+                `;
+            };
+
+            // Main Menu
+            const renderMainMenu = () => {
+                heroSection.classList.remove('hidden');
+                currentView = 'main';
+                contentContainer.innerHTML = `
+                    <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="showEngineFeatures()" class="btn-automotive w-full py-6 bg-blue-600 hover:bg-blue-700 justify-center">
+                            <span class="text-lg mr-2">⚙️</span> Engine Features
+                        </button>
+                        <button onclick="showViewCars()" class="btn-automotive w-full py-6 bg-teal-600 hover:bg-teal-700 justify-center">
+                            <span class="text-lg mr-2">🚗</span> Available Cars
+                        </button>
+                        <button onclick="showSearchCars()" class="btn-automotive w-full py-6 bg-purple-600 hover:bg-purple-700 justify-center">
+                            <span class="text-lg mr-2">🔍</span> Search Cars
+                        </button>
+                        <button onclick="showBuyCar()" class="btn-automotive w-full py-6 bg-green-600 hover:bg-green-700 justify-center">
+                            <span class="text-lg mr-2">💰</span> Buy a Car
+                        </button>
+                        <button onclick="showRegisterCustomer()" class="btn-automotive w-full py-6 bg-orange-600 hover:bg-orange-700 justify-center">
+                            <span class="text-lg mr-2">👤</span> Register Customer
+                        </button>
+                        <button onclick="showAboutUs()" class="btn-automotive w-full py-6 bg-sky-600 hover:bg-sky-700 justify-center">
+                            <span class="text-lg mr-2">ℹ️</span> About Us
+                        </button>
+                        <button onclick="showAdminLogin()" class="btn-automotive bg-rose-600 hover:bg-rose-700 w-full py-6 col-span-1 sm:col-span-2 lg:col-span-3 justify-center">
+                            <span class="text-lg mr-2">🔐</span> Admin Portal
+                        </button>
+                    </nav>
+                `;
+            };
+
+            const renderWithBackButton = (content) => {
+                heroSection.classList.add('hidden');
+                contentContainer.innerHTML = content + `
+                    <div class="mt-8">
+                        <button onclick="renderMainMenu()" class="btn-automotive">
+                            <span class="mr-2">←</span> Back to Main Menu
+                        </button>
+                    </div>
+                `;
+            };
+
+            // Engine Features
+            window.showEngineFeatures = () => {
+                const features = [
+                    {
+                        title: "Cylinder Type",
+                        description: "The cylinder is the central part of an engine where fuel is burned to power the vehicle. The type of cylinder arrangement can vary, with the most common configurations being inline, V, and flat or horizontally opposed.",
+                        icon: "⚙️"
+                    },
+                    {
+                        title: "Cylinder Capacity",
+                        description: "Also known as engine displacement, cylinder capacity refers to the total volume of air and fuel that an engine can draw in and expel during one complete engine cycle. It is measured in cubic centimeters (cc) or liters (L).",
+                        icon: "📊"
+                    },
+                    {
+                        title: "Torque",
+                        description: "Torque is a measure of the rotational force produced by an engine. It is typically measured in foot-pounds (ft-lb) or Newton-meters (Nm) and is an important factor in an engine's acceleration and towing capabilities.",
+                        icon: "⚡"
+                    },
+                    {
+                        title: "Transmission",
+                        description: "The transmission is the component of a vehicle that transmits power from the engine to the wheels. It includes a clutch, gearbox, drive shaft, and differential.",
+                        icon: "🔧"
+                    },
+                    {
+                        title: "Power",
+                        description: "Power is a measure of an engine's ability to do work over a given period of time. It is typically measured in horsepower (hp) or watts (W) and is a crucial factor in an engine's performance capabilities.",
+                        icon: "🚀"
+                    }
+                ];
+
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Understanding <span class="gradient-text">Engine Features</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Master the fundamentals of automotive engineering</p>
+                    </div>
+                    <div class="space-y-6">
+                        ${features.map((feature, index) => `
+                            <div class="automotive-card p-8">
+                                <div class="flex items-start gap-6">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center glow-primary flex-shrink-0">
+                                        <span class="text-2xl">${feature.icon}</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold mb-3">
+                                            ${index + 1}. ${feature.title}
+                                        </h3>
+                                        <p class="text-gray-400 leading-relaxed">
+                                            ${feature.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            // View Cars
+            window.showViewCars = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Browse Our <span class="gradient-text">Premium Collection</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Discover exceptional vehicles crafted for discerning drivers</p>
+                    </div>
+                    ${availableCars.length === 0 ? 
+                        '<div class="text-center py-16"><p class="text-xl text-gray-400">No cars are currently available in our inventory.</p></div>' :
+                        `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${availableCars.map(car => renderCarCard(car)).join('')}
+                        </div>`
+                    }
+                `;
+                renderWithBackButton(content);
+            };
+
+            // Search Cars
+            window.showSearchCars = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Find Your <span class="gradient-text">Perfect Car</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Use our advanced search to discover your ideal vehicle</p>
+                    </div>
+                    <div class="automotive-card p-8 mb-8">
+                        <form id="search-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Cylinder Type</label>
+                                    <input type="text" id="cyl-type" placeholder="inline, V, boxer" class="form-input" value="${searchPreferences.cylType || ''}">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Min Capacity (L)</label>
+                                    <input type="number" id="min-capacity" step="0.1" placeholder="e.g., 3.0" class="form-input" value="${searchPreferences.minCapacity || ''}">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Min Power (HP)</label>
+                                    <input type="number" id="min-power" placeholder="e.g., 300" class="form-input" value="${searchPreferences.minPower || ''}">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Min Torque (Nm)</label>
+                                    <input type="number" id="min-torque" placeholder="e.g., 400" class="form-input" value="${searchPreferences.minTorque || ''}">
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="submit" class="btn-automotive flex-1">🔍 Search Cars</button>
+                                <button type="button" onclick="saveSearchPreferences()" class="btn-accent">💾 Save Preferences</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="search-results"></div>
+                `;
+                renderWithBackButton(content);
+
+                document.getElementById('search-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    performSearch();
+                });
+            };
+
+            window.saveSearchPreferences = () => {
+                searchPreferences = {
+                    cylType: document.getElementById('cyl-type').value,
+                    minCapacity: document.getElementById('min-capacity').value,
+                    minPower: document.getElementById('min-power').value,
+                    minTorque: document.getElementById('min-torque').value
+                };
+                storage.set('searchPreferences', searchPreferences);
+                showToast('Search preferences saved successfully!');
+            };
+
+            const performSearch = () => {
+                const cylType = document.getElementById('cyl-type').value.trim().toLowerCase();
+                const minCapacity = parseFloat(document.getElementById('min-capacity').value) || 0;
+                const minPower = parseInt(document.getElementById('min-power').value) || 0;
+                const minTorque = parseInt(document.getElementById('min-torque').value) || 0;
+
+                const query = { cylType, minCapacity, minPower, minTorque };
+                const queryKeys = Object.entries(query).filter(([, value]) => value);
+                const queryCount = queryKeys.length;
+
+                if (queryCount === 0) {
+                    showToast('Please enter at least one search criterion.', 'error');
+                    return;
+                }
+
+                const exactMatches = [];
+                const nearMatches = [];
+
+                availableCars.forEach(car => {
+                    let score = 0;
+                    if (cylType && car.cylinder_type.toLowerCase() === cylType) score++;
+                    if (minCapacity > 0 && parseFloat(car.capacity) >= minCapacity) score++;
+                    if (minPower > 0 && parseInt(car.power) >= minPower) score++;
+                    if (minTorque > 0 && parseInt(car.torque) >= minTorque) score++;
+
+                    if (score === queryCount) {
+                        exactMatches.push(car);
+                    } else if (score > 0) {
+                        nearMatches.push(car);
+                    }
+                });
+
+                const resultsContainer = document.getElementById('search-results');
+                if (exactMatches.length > 0) {
+                    resultsContainer.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-6">Search Results (${exactMatches.length})</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${exactMatches.map(car => renderCarCard(car)).join('')}
+                        </div>
+                    `;
+                    showToast(`Found ${exactMatches.length} exact match${exactMatches.length > 1 ? 'es' : ''}!`);
+                } else if (nearMatches.length > 0) {
+                    resultsContainer.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-6">Near Matches (${nearMatches.length})</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${nearMatches.map(car => renderCarCard(car)).join('')}
+                        </div>
+                    `;
+                    showToast(`No exact matches found. Showing ${nearMatches.length} near match${nearMatches.length > 1 ? 'es' : ''}.`);
+                } else {
+                    resultsContainer.innerHTML = '<div class="text-center py-12"><p class="text-xl text-gray-400">No cars found matching your search criteria.</p></div>';
+                    showToast('No cars found matching your preferences.', 'error');
+                }
+            };
+
+            // Buy Car
+            let selectedCarForPurchase = '';
+            
+            window.selectCar = (carName) => {
+                selectedCarForPurchase = carName;
+                const cards = document.querySelectorAll('.car-card');
+                cards.forEach(card => card.classList.remove('selected'));
+                event.target.closest('.car-card').classList.add('selected');
+                
+                document.getElementById('purchase-form').classList.remove('hidden');
+                document.getElementById('selected-car-display').textContent = carName;
+            };
+
+            window.showBuyCar = () => {
+                selectedCarForPurchase = '';
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Purchase Your <span class="gradient-text">Dream Car</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Select a vehicle and complete your purchase</p>
+                    </div>
+                    
+                    ${availableCars.length === 0 ? 
+                        '<div class="automotive-card text-center p-12"><p class="text-xl text-gray-400">No cars are currently available for purchase.</p></div>' :
+                        `<div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-6">Available Vehicles</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
+                                ${availableCars.map(car => renderCarCard(car, true, selectedCarForPurchase)).join('')}
+                            </div>
+                        </div>
+                        
+                        <div id="purchase-form" class="automotive-card p-8 hidden">
+                            <form onsubmit="handlePurchase(event)" class="space-y-6">
+                                <h3 class="text-2xl font-bold text-center mb-4">
+                                    Purchasing: <span class="gradient-text-accent" id="selected-car-display"></span>
+                                </h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-semibold mb-2">Full Name *</label>
+                                        <input type="text" id="customer-name" placeholder="Enter your full name" class="form-input" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold mb-2">Email Address *</label>
+                                        <input type="email" id="customer-email" placeholder="Enter your email address" class="form-input" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold mb-2">Contact Number *</label>
+                                        <input type="tel" id="customer-contact" placeholder="Enter your contact number" class="form-input" required>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="w-full btn-accent text-lg py-4">
+                                    🛒 Confirm Purchase
+                                </button>
+                            </form>
+                        </div>`
+                    }
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handlePurchase = (e) => {
+                e.preventDefault();
+                
+                if (!selectedCarForPurchase) {
+                    showToast('Please select a car to purchase.', 'error');
+                    return;
+                }
+
+                const customerName = document.getElementById('customer-name').value;
+                const customerEmail = document.getElementById('customer-email').value;
+                const customerContact = document.getElementById('customer-contact').value;
+
+                const carToBuy = availableCars.find(car => car.name === selectedCarForPurchase);
+                if (!carToBuy) {
+                    showToast('The selected car is no longer available.', 'error');
+                    return;
+                }
+
+                // Check if customer exists
+                let customer = customers.find(c => c.email.toLowerCase() === customerEmail.toLowerCase());
+
+                if (!customer) {
+                    // Add new customer
+                    customer = {
+                        name: customerName,
+                        contact: customerContact,
+                        email: customerEmail,
+                        registrationDate: new Date().toISOString()
+                    };
+                    customers.push(customer);
+                    storage.set('customers', customers);
+                }
+
+                // Create purchase record
+                const purchase = {
+                    customer_name: customer.name,
+                    email: customer.email,
+                    contact: customer.contact,
+                    car_name: carToBuy.name,
+                    engine_name: carToBuy.engine_name,
+                    cylinder_type: carToBuy.cylinder_type,
+                    capacity: carToBuy.capacity,
+                    torque: carToBuy.torque,
+                    transmission: carToBuy.transmission,
+                    power: carToBuy.power,
+                    price: carToBuy.price,
+                    purchaseDate: new Date().toISOString()
+                };
+
+                // Add to purchased cars
+                purchasedCars.push(purchase);
+                storage.set('purchasedCars', purchasedCars);
+
+                // Remove from available cars
+                availableCars = availableCars.filter(car => car.name !== selectedCarForPurchase);
+                storage.set('availableCars', availableCars);
+
+                launchConfetti();
+                showToast(`Congratulations, ${customer.name}! You have successfully purchased the ${selectedCarForPurchase}.`);
+                
+                setTimeout(() => {
+                    renderMainMenu();
+                }, 4000);
+            };
+
+            // Register Customer
+            window.showRegisterCustomer = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Customer <span class="gradient-text">Registration</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Join our community of automotive enthusiasts</p>
+                    </div>
+                    <div class="automotive-card p-8">
+                        <form onsubmit="handleCustomerRegistration(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Full Name *</label>
+                                <input type="text" id="new-customer-name" placeholder="Enter full name" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Contact Number *</label>
+                                <input type="tel" id="new-customer-contact" placeholder="Enter contact number" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Email Address *</label>
+                                <input type="email" id="new-customer-email" placeholder="Enter email address" class="form-input" required>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive text-lg py-4">
+                                👤 Register Customer
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleCustomerRegistration = (e) => {
+                e.preventDefault();
+                
+                const newCustomer = {
+                    name: document.getElementById('new-customer-name').value,
+                    contact: document.getElementById('new-customer-contact').value,
+                    email: document.getElementById('new-customer-email').value,
+                    registrationDate: new Date().toISOString()
+                };
+
+                const customerExists = customers.some(c => c.email.toLowerCase() === newCustomer.email.toLowerCase());
+                if (customerExists) {
+                    showToast('A customer with this email already exists.', 'error');
+                    return;
+                }
+
+                customers.push(newCustomer);
+                storage.set('customers', customers);
+                showToast('Customer registered successfully!');
+                
+                setTimeout(() => {
+                    renderMainMenu();
+                }, 2000);
+            };
+
+            // About Us
+            window.showAboutUs = () => {
+                const values = [
+                    { icon: "🏆", title: "Excellence", description: "We maintain the highest standards in everything we do" },
+                    { icon: "👥", title: "Customer First", description: "Your satisfaction is our top priority" },
+                    { icon: "🎯", title: "Precision", description: "Every detail matters in delivering perfection" },
+                    { icon: "⭐", title: "Premium Quality", description: "Only the finest vehicles make it to our showroom" }
+                ];
+
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            About <span class="gradient-text">Big Boy Cars</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Where automotive dreams become reality</p>
+                    </div>
+                    
+                    <div class="automotive-card p-8 mb-8">
+                        <div class="space-y-6 text-gray-400">
+                            <p class="text-lg leading-relaxed">
+                                Welcome to Big Boy Cars, where we specialize in luxury and high-performance vehicles. 
+                                Our mission is to connect you with the car of your dreams, providing a seamless and 
+                                transparent purchasing experience. We believe that every car has a story, and we are 
+                                here to help you start your next chapter behind the wheel of an extraordinary machine.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                Our team of experts is passionate about cars and committed to helping you find the perfect match. 
+                                From powerful sports cars to elegant sedans, our carefully curated collection represents the 
+                                pinnacle of automotive engineering. Thank you for choosing Big Boy Cars—we look forward to serving you!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        ${values.map((value, index) => `
+                            <div class="automotive-card text-center p-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-primary mx-auto mb-4 flex items-center justify-center glow-primary">
+                                    <span class="text-2xl">${value.icon}</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">${value.title}</h3>
+                                <p class="text-gray-400 text-sm">${value.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            // Admin Login
+            window.showAdminLogin = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Admin <span class="gradient-text">Portal Login</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Secure access for authorized personnel</p>
+                    </div>
+                    <div class="automotive-card p-8 max-w-md mx-auto">
+                        <form onsubmit="handleAdminLogin(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Admin Password</label>
+                                <input type="password" id="admin-password" placeholder="Enter admin password" class="form-input" required>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive text-lg py-4">
+                                🔐 Login to Admin Portal
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleAdminLogin = (e) => {
+                e.preventDefault();
+                const password = document.getElementById('admin-password').value;
+                
+                if (password === adminPassword) {
+                    showToast('Admin login successful!');
+                    showAdminMenu();
+                    loginAttempts = 0;
+                } else {
+                    loginAttempts++;
+                    if (loginAttempts >= 3) {
+                        showToast('Too many failed attempts. Please try again later.', 'error');
+                        setTimeout(() => {
+                            renderMainMenu();
+                        }, 3000);
+                        loginAttempts = 0;
+                    } else {
+                        showToast(`Wrong password. You have ${3 - loginAttempts} attempts left.`, 'error');
+                    }
+                }
+            };
+
+            // Admin Menu
+            const showAdminMenu = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold mb-4">
+                            Admin <span class="gradient-text">Dashboard</span>
+                        </h2>
+                        <p class="text-xl text-gray-400">Manage your automotive business</p>
+                    </div>
+                    <nav class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <button onclick="showCustomers()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            👥 View All Customers
+                        </button>
+                        <button onclick="showAddCarForm()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            ➕ Add New Car
+                        </button>
+                        <button onclick="showUpdateCarForm()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            ✏️ Update Car
+                        </button>
+                        <button onclick="showDeleteCustomerForm()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            🗑️ Delete Customer
+                        </button>
+                        <button onclick="showPurchases()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            📊 View Sold Cars
+                        </button>
+                        <button onclick="showDeleteCarForm()" class="btn-automotive w-full py-6 bg-red-600 hover:bg-red-700 justify-center">
+                            🚫 Delete Car
+                        </button>
+                        <button onclick="downloadAllData()" class="btn-automotive bg-red-600 hover:bg-red-700 w-full py-6 col-span-1 sm:col-span-2 justify-center">
+                            📥 Download All Data
+                        </button>
+                    </nav>
+                `;
+                renderWithBackButton(content);
+            };
+
+            // Admin Functions
+            window.showCustomers = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">All Registered <span class="gradient-text">Customers</span></h3>
+                    </div>
+                    ${customers.length > 0 ?
+                        customers.map(c => `
+                            <div class="automotive-card p-6 mb-4">
+                                <h4 class="text-xl font-bold mb-2">${c.name}</h4>
+                                <p class="text-gray-400"><strong>Email:</strong> ${c.email}</p>
+                                <p class="text-gray-400"><strong>Contact:</strong> ${c.contact}</p>
+                                <p class="text-gray-400 text-sm"><strong>Registered:</strong> ${new Date(c.registrationDate).toLocaleDateString()}</p>
+                            </div>
+                        `).join('') : 
+                        '<div class="text-center py-12"><p class="text-xl text-gray-400">No customers registered yet.</p></div>'
+                    }
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.showPurchases = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">Sold Cars <span class="gradient-text">Report</span></h3>
+                    </div>
+                    ${purchasedCars.length > 0 ?
+                        purchasedCars.map(p => `
+                            <div class="automotive-card p-6 mb-4">
+                                <h4 class="text-xl font-bold mb-2">${p.car_name}</h4>
+                                <p class="text-gray-400"><strong>Customer:</strong> ${p.customer_name}</p>
+                                <p class="text-gray-400"><strong>Email:</strong> ${p.email}</p>
+                                <p class="text-gray-400"><strong>Price:</strong> $${parseInt(p.price).toLocaleString()}</p>
+                                <p class="text-gray-400 text-sm"><strong>Date:</strong> ${new Date(p.purchaseDate).toLocaleDateString()}</p>
+                            </div>
+                        `).join('') : 
+                        '<div class="text-center py-12"><p class="text-xl text-gray-400">No cars have been sold yet.</p></div>'
+                    }
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.showAddCarForm = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">Add a <span class="gradient-text">New Car</span></h3>
+                    </div>
+                    <div class="automotive-card p-8">
+                        <form onsubmit="handleAddCar(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Car Name *</label>
+                                    <input type="text" id="car-name" placeholder="e.g., BMW 7 Series" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Engine Name *</label>
+                                    <input type="text" id="engine-name" placeholder="e.g., BMW V8" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Cylinder Type *</label>
+                                    <select id="cylinder-type" class="form-select" required>
+                                        <option value="">Select type</option>
+                                        <option value="inline">Inline</option>
+                                        <option value="V">V</option>
+                                        <option value="boxer">Boxer</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Capacity (L) *</label>
+                                    <input type="number" id="capacity" step="0.1" placeholder="e.g., 4.4" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Torque (Nm) *</label>
+                                    <input type="number" id="torque" placeholder="e.g., 500" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Transmission *</label>
+                                    <select id="transmission" class="form-select" required>
+                                        <option value="">Select transmission</option>
+                                        <option value="automatic">Automatic</option>
+                                        <option value="manual">Manual</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Power (HP) *</label>
+                                    <input type="number" id="power" placeholder="e.g., 540" class="form-input" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2">Price ($) *</label>
+                                    <input type="number" id="price" placeholder="e.g., 86000" class="form-input" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive text-lg py-4">
+                                ➕ Add New Car
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleAddCar = (e) => {
+                e.preventDefault();
+                
+                const newCar = {
+                    name: document.getElementById('car-name').value,
+                    engine_name: document.getElementById('engine-name').value,
+                    cylinder_type: document.getElementById('cylinder-type').value,
+                    capacity: document.getElementById('capacity').value,
+                    torque: document.getElementById('torque').value,
+                    transmission: document.getElementById('transmission').value,
+                    power: document.getElementById('power').value,
+                    price: document.getElementById('price').value
+                };
+
+                availableCars.push(newCar);
+                storage.set('availableCars', availableCars);
+                showToast('New car added successfully!');
+                
+                setTimeout(() => {
+                    showAdminMenu();
+                }, 2000);
+            };
+
+            window.showUpdateCarForm = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">Update Car <span class="gradient-text">Details</span></h3>
+                    </div>
+                    <div class="automotive-card p-8">
+                        <form onsubmit="handleUpdateCar(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Select Car to Update *</label>
+                                <select id="car-to-update" class="form-select" required>
+                                    <option value="">Choose a car</option>
+                                    ${availableCars.map(car => `<option value="${car.name}">${car.name}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">New Price ($) *</label>
+                                <input type="number" id="update-price" placeholder="Enter new price" class="form-input" required>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive text-lg py-4">
+                                ✏️ Update Car Price
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleUpdateCar = (e) => {
+                e.preventDefault();
+                
+                const carName = document.getElementById('car-to-update').value;
+                const newPrice = document.getElementById('update-price').value;
+                const carIndex = availableCars.findIndex(car => car.name === carName);
+
+                if (carIndex !== -1) {
+                    availableCars[carIndex].price = newPrice;
+                    storage.set('availableCars', availableCars);
+                    showToast('Car price updated successfully!');
+                } else {
+                    showToast('Car not found.', 'error');
+                }
+                
+                setTimeout(() => {
+                    showAdminMenu();
+                }, 2000);
+            };
+
+            window.showDeleteCustomerForm = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">Delete a <span class="gradient-text">Customer</span></h3>
+                    </div>
+                    <div class="automotive-card p-8">
+                        <form onsubmit="handleDeleteCustomer(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Select Customer to Delete *</label>
+                                <select id="customer-to-delete" class="form-select" required>
+                                    <option value="">Choose a customer</option>
+                                    ${customers.map(c => `<option value="${c.email}">${c.name} (${c.email})</option>`).join('')}
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive bg-red-600 hover:bg-red-700 text-lg py-4">
+                                🗑️ Delete Customer
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleDeleteCustomer = (e) => {
+                e.preventDefault();
+                
+                const customerEmail = document.getElementById('customer-to-delete').value;
+                const initialLength = customers.length;
+                customers = customers.filter(c => c.email !== customerEmail);
+                storage.set('customers', customers);
+                
+                if (customers.length < initialLength) {
+                    showToast('Customer deleted successfully!');
+                } else {
+                    showToast('Customer not found.', 'error');
+                }
+                
+                setTimeout(() => {
+                    showAdminMenu();
+                }, 2000);
+            };
+
+            window.showDeleteCarForm = () => {
+                const content = `
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">Delete a <span class="gradient-text">Car</span></h3>
+                    </div>
+                    <div class="automotive-card p-8">
+                        <form onsubmit="handleDeleteCar(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Select Car to Delete *</label>
+                                <select id="car-to-delete" class="form-select" required>
+                                    <option value="">Choose a car</option>
+                                    ${availableCars.map(car => `<option value="${car.name}">${car.name}</option>`).join('')}
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full btn-automotive bg-red-600 hover:bg-red-700 text-lg py-4">
+                                🚫 Delete Car
+                            </button>
+                        </form>
+                    </div>
+                `;
+                renderWithBackButton(content);
+            };
+
+            window.handleDeleteCar = (e) => {
+                e.preventDefault();
+                
+                const carName = document.getElementById('car-to-delete').value;
+                const initialLength = availableCars.length;
+                availableCars = availableCars.filter(car => car.name !== carName);
+                storage.set('availableCars', availableCars);
+                
+                if (availableCars.length < initialLength) {
+                    showToast('Car deleted successfully!');
+                } else {
+                    showToast('Car not found.', 'error');
+                }
+                
+                setTimeout(() => {
+                    showAdminMenu();
+                }, 2000);
+            };
+
+            // Download Data
+            const downloadCSV = (data, filename) => {
+                if (data.length === 0) {
+                    showToast(`No data to download for ${filename}.`, 'error');
+                    return;
+                }
+                
+                const replacer = (key, value) => value === null ? '' : value;
+                const header = Object.keys(data[0]);
+                const csv = [
+                    header.join(','),
+                    ...data.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
+                ].join('\r\n');
+                
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.setAttribute('hidden', '');
+                a.setAttribute('href', url);
+                a.setAttribute('download', filename);
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
+
+            window.downloadAllData = () => {
+                downloadCSV(availableCars, 'available_cars.csv');
+                downloadCSV(purchasedCars, 'purchased_cars.csv');
+                downloadCSV(customers, 'customers.csv');
+                showToast('Downloading data files...');
+            };
+
+            // Global functions
+            window.renderMainMenu = renderMainMenu;
+
+            // Initialize application
+            window.addEventListener('load', () => {
+                renderMainMenu();
+            });
+
+        })();
+    </script>
+</body>
+</html>
